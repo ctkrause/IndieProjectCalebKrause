@@ -10,15 +10,40 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+    <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
+    <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
+    <maven-surefire-plugin-version>2.19</maven-surefire-plugin-version>
     <maven.compiler.release>11</maven.compiler.release>
     <junit.version>4.12</junit.version>
     <javax.version>7.0</javax.version>
-    <!-- TODO make sure your mysql driver version matches your mysql version -->
+    <log4j-version>2.10.0</log4j-version>
     <mysql-version>8.0.16</mysql-version>
     <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
   </properties>
 
   <dependencies>
+  <dependency>
+    <groupId>org.junit.vintage</groupId>
+    <artifactId>junit-vintage-engine</artifactId>
+    <version>4.12.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.0.0</version>
+    <scope>test</scope>
+  </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
@@ -49,13 +74,24 @@
 
   </dependencies>
   <build>
-    <finalName>indieproject</finalName>
+    <finalName>indieProject</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin-version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.junit.platform</groupId>
+              <artifactId>junit-platform-surefire-provider</artifactId>
+              <version>${junit-platform-runner-version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
       </plugins>
     </pluginManagement>
