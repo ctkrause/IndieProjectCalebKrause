@@ -28,3 +28,7 @@ across my profile knows my skills and experience level.*
 ### Edit User Profile
 - As a registered user I want to be able to change my personal information as I learn new skills.*
 
+***
+
+**asterisk denotes minimum viable product feature* 
+
