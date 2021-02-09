@@ -1,5 +1,16 @@
-Week 1 - Five minutes?
-
-Week 2 - Thirty Minutes 
-
-Week 3 through end of semester...I've installed WakaTime to track all my coding within the IntelliJ IDE.
+| Date  | Task  | Hours  | Notes  |
+|---|---|---|---|
+| 1/30/20  | Setup project repo, wrote problem statement, started readme file, and added some technologies used  |  1  |   |
+| 2/8/21  | Imported project plan, updated user stories, and brought in wireframes  | 2  |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
