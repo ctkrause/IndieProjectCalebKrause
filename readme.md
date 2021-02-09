@@ -18,7 +18,12 @@ Project Technologies/Techniques
 - IDE: IntelliJ IDEA
 - Database
   - MySQL 8.0.22
-- Many more to be added later   
+- ORM Framework 
+  - Hibernate 5
+- Logging
+  - Log4J2
+- Unit Testing
+  - JUnit tests to achieve 80%+ code coverage
 
 Design
 - User Stories
@@ -28,4 +33,6 @@ Design
 - Database Design
 
 Project Plan
-    
+- Weekly Reflection
+- Journal
+- WakaTime
