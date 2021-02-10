@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import util.SessionFactoryProvider;
 
 import javax.persistence.criteria.*;
 import java.util.List;

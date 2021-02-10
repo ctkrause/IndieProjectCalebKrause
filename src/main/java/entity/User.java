@@ -8,11 +8,11 @@ import javax.persistence.*;
  * @author Caleb T. Krause
  */
 @Entity(name = "User")
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name= "native",stratey= "native")
+    @GenericGenerator(name= "native",strategy= "native")
     private int id;
 
     @Column(name = "username")
