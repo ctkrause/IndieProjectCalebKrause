@@ -1,4 +1,5 @@
 import entity.User;
+import org.hibernate.boot.model.relational.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import persistence.UserDao;
@@ -15,6 +16,8 @@ public class UserDaoTest {
     void setUp() {
         dao = new UserDao();
     }
+    Database database = Database.getInstance();
+        database.runSQL("cleandb.sql");
 
     /**
      * Verifies gets all users successfully.
