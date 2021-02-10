@@ -4,7 +4,6 @@ import entity.User;
 import util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import persistence.UserDao;
 
 import java.util.List;
 
