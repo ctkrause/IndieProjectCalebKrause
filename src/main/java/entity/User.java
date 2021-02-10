@@ -1,17 +1,30 @@
 package entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.*;
 
 /**
  * Class respresents a user of the indieProject
  * @author Caleb T. Krause
  */
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name= "native",stratey= "native")
     private int id;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "role")
     private String role;
+
+    @Column(name = "skills")
     private String skills;
 
     public User() {
