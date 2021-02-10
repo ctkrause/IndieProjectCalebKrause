@@ -36,20 +36,20 @@ public class UserDao {
 
     /**
      * Gets all users by last name.
-     * @param lastName the last name to search by
+     * @param name the last name to search by
      * @return the all users
      */
-    public List<User> getUsersByLastName(String lastName) {
+    public List<User> getUsersByName(String name) {
 
-        logger.debug("Searching for: {}", lastName);
+        logger.debug("Searching for: {}", name);
 
         Session session = sessionFactory.openSession();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<User> query = builder.createQuery(User.class);
         Root<User> root = query.from(User.class);
-        Expression<String> propertyPath = root.get("lastName");
-        query.where(builder.like(propertyPath, "%" + lastName + "%"));
+        Expression<String> propertyPath = root.get("name");
+        query.where(builder.like(propertyPath, "%" + name + "%"));
         List<User> users = session.createQuery(query).getResultList();
         session.close();
         return users;
