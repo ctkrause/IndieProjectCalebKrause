@@ -1,7 +1,10 @@
 package entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 /**
- * The type User.
+ * Class respresents a user of the indieProject
+ * @author Caleb T. Krause
  */
 public class User {
 
@@ -10,6 +13,10 @@ public class User {
     private String name;
     private String role;
     private String skills;
+
+    public User() {
+        //no argument constructor
+    }
 
     /**
      * Instantiates a new User.
