@@ -2,9 +2,12 @@ package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Class respresents a user of the indieProject
+ *
  * @author Caleb T. Krause
  */
 @Entity(name = "User")
@@ -24,6 +27,12 @@ public class User {
     @Column(name = "skills")
     private String skills;
 
+    @OneToMany(mappedBy= "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Role> roles = new HashSet<>();
+
+    /**
+     * Instantiates a new User.
+     */
     public User() {
         //no argument constructor
     }
@@ -116,6 +125,23 @@ public class User {
         this.skills = skills;
     }
 
+    /**
+     * Gets roles.
+     *
+     * @return the roles
+     */
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     @Override
     public String toString() {

@@ -5,12 +5,11 @@ import javax.persistence.*;
 
 /**
  * Class respresents a user of the indieProject
- *
  * @author Caleb T. Krause
  */
 @Entity(name = "Roles")
 @Table(name = "roles")
-public class Roles {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -18,26 +17,25 @@ public class Roles {
 
     private String title;
 
-    @Column(name = "user_id")
-    private int userId;
+    @ManyToOne
+    private User user;
 
     /**
      * Instantiates a new Roles.
      */
-    public Roles() {
+    public Role() {
+        //no argument constructor
     }
 
     /**
      * Instantiates a new Roles.
      *
-     * @param id     the id
      * @param title  the title
-     * @param userId the user id
+     * @param user the user id
      */
-    public Roles(int id, String title, int userId) {
-        this.id = id;
+    public Role(String title, User user) {
         this.title = title;
-        this.userId = userId;
+        this.user = user;
     }
 
     /**
@@ -81,17 +79,17 @@ public class Roles {
      *
      * @return the user id
      */
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
     /**
      * Sets user id.
      *
-     * @param userId the user id
+     * @param user the user id
      */
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -99,7 +97,7 @@ public class Roles {
         return "Roles{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", userId=" + userId +
+                ", userId=" + user +
                 '}';
     }
 }
