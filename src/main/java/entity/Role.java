@@ -7,7 +7,7 @@ import javax.persistence.*;
  * Class respresents a user of the indieProject
  * @author Caleb T. Krause
  */
-@Entity(name = "Roles")
+@Entity(name = "Role")
 @Table(name = "roles")
 public class Role {
     @Id

@@ -45,7 +45,7 @@ public class UserDaoTest {
     @Test
     void insertSuccess() {
 
-        User newUser = new User(7, "freddyFlinstone", "Fred Flinstone", "Caveman", "Running his little car thingy");
+        User newUser = new User(7, "freddyFlinstone", "Fred Flinstone", "Running his little car thingy");
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);

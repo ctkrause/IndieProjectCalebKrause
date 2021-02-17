@@ -43,10 +43,9 @@ public class User {
      * @param id       the id
      * @param username the username
      * @param name     the name
-     * @param role     the role
      * @param skills   the skills
      */
-    public User(int id, String username, String name, String role, String skills) {
+    public User(int id, String username, String name, String skills) {
         this.id = id;
         this.username = username;
         this.name = name;
