@@ -75,12 +75,12 @@ public class RoleDao {
 
     /**
      * Delete a Role
-     * @param Role Role to be deleted
+     * @param role Role to be deleted
      */
-    public void delete(Role Role) {
+    public void delete(Role role) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(Role);
+        session.delete(role);
         transaction.commit();
         session.close();
     }
