@@ -39,14 +39,12 @@ public class User {
 
     /**
      * Instantiates a new User.
-     *
-     * @param id       the id
+     * @param id the user's id
      * @param username the username
      * @param name     the name
      * @param skills   the skills
      */
     public User(int id, String username, String name, String skills) {
-        this.id = id;
         this.username = username;
         this.name = name;
         this.skills = skills;
