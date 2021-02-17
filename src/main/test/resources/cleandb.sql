@@ -1,2 +1,2 @@
 DELETE FROM users;
-INSERT INTO `users` VALUES (1,'ctkrause','caleb','user','javaEnt'),(2,'ctkrause','Caleb Krause','admin','Hibernate'),(3,'lSamuel','Levi Krause','basicUser','Mechanic'),(4,'iNathaniel','Isaiah Krause','basicUser','phlebotomist'),(5,'nCarl','Nathan Krause','basicUser','preacher'),(6,'sAnn','Sheryl Krause','basicUser','doctorOfNursing');
+INSERT INTO `users` VALUES (1,'ctkrause','caleb','javaEnt'),(2,'ctkrause','Caleb Krause','Hibernate'),(3,'lSamuel','Levi Krause','Mechanic'),(4,'iNathaniel','Isaiah Krause','phlebotomist'),(5,'nCarl','Nathan Krause','preacher'),(6,'sAnn','Sheryl Krause','doctorOfNursing');

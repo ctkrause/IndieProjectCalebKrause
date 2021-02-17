@@ -21,9 +21,6 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "role")
-    private String role;
-
     @Column(name = "skills")
     private String skills;
 
@@ -44,7 +41,6 @@ public class User {
         this.id = id;
         this.username = username;
         this.name = name;
-        this.role = role;
         this.skills = skills;
     }
 
@@ -103,24 +99,6 @@ public class User {
     }
 
     /**
-     * Gets role.
-     *
-     * @return the role
-     */
-    public String getRole() {
-        return role;
-    }
-
-    /**
-     * Sets role.
-     *
-     * @param role the role
-     */
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    /**
      * Gets skills.
      *
      * @return the skills
@@ -145,7 +123,6 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", name='" + name + '\'' +
-                ", role='" + role + '\'' +
                 ", skills='" + skills + '\'' +
                 '}';
     }
