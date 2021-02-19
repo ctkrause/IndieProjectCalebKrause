@@ -48,9 +48,7 @@ public class UserDaoTest {
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
-        assertEquals("freddyFlinstone", insertedUser.getUsername());
-        assertEquals("Fred Flinstone", insertedUser.getName());
-        assertEquals("Running his little car thingy", insertedUser.getSkills());
+        assertEquals(newUser, insertedUser);
     }
 
     /**
@@ -72,7 +70,7 @@ public class UserDaoTest {
         userToUpdate.setName(newName);
         dao.saveOrUpdate(userToUpdate);
         User retrievedUser = dao.getById(3);
-        assertEquals(newName, retrievedUser.getName());
+        assertEquals(userToUpdate, retrievedUser);
     }
 
     /**
