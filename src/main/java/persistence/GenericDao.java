@@ -1,14 +1,7 @@
 package persistence;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-
+import javax.persistence.criteria.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -65,7 +58,7 @@ public class GenericDao<T> {
         return list;
     }
 
-    public List<T> findByPropertyEqual(String propertyName, Object value) {
+    public List<T> findByPropertyLike(String propertyName, Object value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
@@ -75,18 +68,36 @@ public class GenericDao<T> {
         return session.createQuery(query).getResultList();
     }
 
-    public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
+    public List<T> getByPropertyEqual(String propertyName, String value) {
         Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        List<Predicate> predicates = new ArrayList<Predicate>();
-        for (Map.Entry entry: propertyMap.entrySet()) {
-            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
-        }
-        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
 
-        return session.createQuery(query).getResultList();
+        logger.debug("Searching for order with " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery( type );
+        Root<T> root = query.from(type );
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<T> entities = session.createQuery( query ).getResultList();
+
+        session.close();
+        return entities;
+    }
+
+    public List<T> getByPropertyLike(String propertyName, String value) {
+        Session session = getSession();
+
+        logger.debug("Searching for order with {} = {}",  propertyName, value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery( type );
+        Root<T> root = query.from( type );
+        Expression<String> propertyPath = root.get(propertyName);
+
+        query.where(builder.like(propertyPath, "%" + value + "%"));
+
+        List<T> entities = session.createQuery( query ).getResultList();
+        session.close();
+        return entities;
     }
 
     private Session getSession() {
