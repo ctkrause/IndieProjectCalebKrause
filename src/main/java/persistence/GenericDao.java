@@ -22,19 +22,6 @@ public class GenericDao<T> {
         this.type = type;
     }
 
-    public List<T> getAll() {
-        Session session = getSession();
-
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        List<T> list = session.createQuery(query).getResultList();
-        session.close();
-        return list;
-
-    }
-
     public <T>T getById(int id) {
         Session session = getSession();
         T entity = (T)session.get(type, id);
