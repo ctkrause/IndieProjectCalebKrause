@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RoleDaoTest {
     GenericDao genericDao;
+    GenericDao userDao;
 
     @BeforeEach
     void setUp() {
@@ -45,8 +46,8 @@ public class RoleDaoTest {
      */
     @Test
     void insertSuccess() {
-        UserDao userDao = new UserDao();
-        User user = userDao.getById(6);
+        userDao = new GenericDao(User.class);
+        User user = (User)userDao.getById(6);
         String newTitle = "SuperAdmin";
         Role newRole = new Role(newTitle, user);
         int id = genericDao.insert(newRole);
