@@ -2,6 +2,7 @@ package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * Class respresents a user of the indieProject
@@ -90,6 +91,19 @@ public class Role {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return id == role.id && Objects.equals(title, role.title) && user.equals(role.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, user);
     }
 
     @Override
