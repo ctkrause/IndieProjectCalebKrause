@@ -63,8 +63,11 @@ public class RoleDaoTest {
      */
     @Test
     void deleteSuccess() {
+        userDao = new GenericDao(User.class);
         genericDao.delete(genericDao.getById(9));
+        User existingUser = (User)userDao.getById(1);
         assertNull(genericDao.getById(9));
+        assertEquals(existingUser, userDao.getById(1));
     }
 
     /**
