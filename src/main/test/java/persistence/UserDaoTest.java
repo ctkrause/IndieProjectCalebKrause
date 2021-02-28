@@ -1,6 +1,8 @@
 package persistence;
 
 import entity.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserDaoTest {
-
+    private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao genericDao;
 
     @BeforeEach
@@ -26,6 +28,7 @@ public class UserDaoTest {
     @Test
     void getAllUsersSuccess() {
         List<User> users = genericDao.getAll();
+        logger.debug(users);
         assertEquals(6, users.size());
     }
 

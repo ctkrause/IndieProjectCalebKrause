@@ -2,6 +2,8 @@ package persistence;
 
 import entity.Role;
 import entity.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RoleDaoTest {
     GenericDao genericDao;
     GenericDao userDao;
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeEach
     void setUp() {
@@ -27,6 +30,7 @@ public class RoleDaoTest {
     @Test
     void getAllRolesSuccess() {
         List<Role> Roles = genericDao.getAll();
+        logger.debug(Roles);
         assertEquals(8, Roles.size());
     }
 
@@ -36,6 +40,7 @@ public class RoleDaoTest {
     @Test
     void getByIdSuccess() {
         Role retrievedRole = (Role)genericDao.getById(11);
+        logger.debug(retrievedRole);
         assertNotNull(retrievedRole);
         assertEquals("BasicUser", retrievedRole.getTitle());
         assertEquals("caleb", retrievedRole.getUser().getName());
