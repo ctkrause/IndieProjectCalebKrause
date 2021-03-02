@@ -5,18 +5,16 @@
 
     <table cellspacing="0" width="50%">
         <thead>
-        <th>id</th>
-        <th>username</th>
-        <th>name</th>
-        <th>skills</th>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
         </thead>
         <tbody>
         <c:forEach var="users" items="${users}">
             <tr>
-                <td>${users.id}</td>
-                <td>${users.username}</td>
-                <td>${users.name}</td>
-                <td>${users.skills}</td>
+                <td>${users.userName}</td>
+                <td>${users.firstName}</td>
+                <td>${users.lastName}</td>
             </tr>
         </c:forEach>
         </tbody>
