@@ -19,6 +19,7 @@
 
         <mapping class="caleb.indie.entity.User"/>
         <mapping class="caleb.indie.entity.Role"/>
+        <mapping class="caleb.indie.entity.Jobs"/>
 
     </session-factory>
 

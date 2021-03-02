@@ -146,12 +146,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && username.equals(user.username) && Objects.equals(name, user.name) && Objects.equals(skills, user.skills);
+        return id == user.id && username.equals(user.username) && Objects.equals(name, user.name) && Objects.equals(skills, user.skills) && Objects.equals(roles, user.roles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, name, skills);
+        return Objects.hash(id, username, name, skills, roles);
     }
 
     @Override
@@ -161,6 +161,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", name='" + name + '\'' +
                 ", skills='" + skills + '\'' +
+                ", roles=" + roles +
                 '}';
     }
 }
