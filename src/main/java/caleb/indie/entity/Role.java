@@ -1,4 +1,4 @@
-package entity;
+package caleb.indie.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;

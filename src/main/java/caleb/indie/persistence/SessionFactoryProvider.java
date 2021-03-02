@@ -1,4 +1,4 @@
-package persistence;
+package caleb.indie.persistence;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

@@ -1,6 +1,6 @@
-package persistence;
+package caleb.indie.persistence;
 
-import entity.User;
+import caleb.indie.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import util.Database;
