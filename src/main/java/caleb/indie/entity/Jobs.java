@@ -2,9 +2,7 @@ package caleb.indie.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * The type Jobs.
@@ -102,12 +100,12 @@ public class Jobs {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Jobs jobs = (Jobs) o;
-        return id == jobs.id && userId == jobs.userId && Objects.equals(description, jobs.description);
+        return id == jobs.id && Objects.equals(description, jobs.description) && user.equals(jobs.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, userId);
+        return Objects.hash(id, description, user);
     }
 
     @Override
@@ -115,7 +113,7 @@ public class Jobs {
         return "Jobs{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", userId=" + userId +
+                ", user=" + user +
                 '}';
     }
 }

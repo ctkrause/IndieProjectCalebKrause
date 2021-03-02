@@ -12,24 +12,30 @@ import java.util.Set;
  * @author Caleb T. Krause
  */
 @Entity(name = "User")
-@Table(name = "users")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name= "native",strategy= "native")
     private int id;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "first_name")
+    private String firstName;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "last_name")
+    private String lastName;
 
-    @Column(name = "skills")
-    private String skills;
+    @Column(name = "user_name")
+    private String userName;
+
+    @Column(name = "pass")
+    private String password;
 
     @OneToMany(mappedBy= "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Jobs> jobs = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -40,15 +46,15 @@ public class User {
 
     /**
      * Instantiates a new User.
-     * @param id the user's id
-     * @param username the username
-     * @param name     the name
-     * @param skills   the skills
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
      */
-    public User(int id, String username, String name, String skills) {
-        this.username = username;
-        this.name = name;
-        this.skills = skills;
+    public User(String firstName, String lastName, String userName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
     }
 
     /**
@@ -70,57 +76,75 @@ public class User {
     }
 
     /**
-     * Gets username.
+     * Gets first name.
      *
-     * @return the username
+     * @return the first name
      */
-    public String getUsername() {
-        return username;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
-     * Sets username.
+     * Sets first name.
      *
-     * @param username the username
+     * @param firstName the first name
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
-     * Gets name.
+     * Gets last name.
      *
-     * @return the name
+     * @return the last name
      */
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
-     * Sets name.
+     * Sets last name.
      *
-     * @param name the name
+     * @param lastName the last name
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
-     * Gets skills.
+     * Gets user name.
      *
-     * @return the skills
+     * @return the user name
      */
-    public String getSkills() {
-        return skills;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * Sets skills.
+     * Sets user name.
      *
-     * @param skills the skills
+     * @param userName the user name
      */
-    public void setSkills(String skills) {
-        this.skills = skills;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     /**
@@ -141,27 +165,44 @@ public class User {
         this.roles = roles;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && username.equals(user.username) && Objects.equals(name, user.name) && Objects.equals(skills, user.skills) && Objects.equals(roles, user.roles);
+    /**
+     * Gets jobs.
+     *
+     * @return the jobs
+     */
+    public Set<Jobs> getJobs() {
+        return jobs;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, username, name, skills, roles);
+    /**
+     * Sets jobs.
+     *
+     * @param jobs the jobs
+     */
+    public void setJobs(Set<Jobs> jobs) {
+        this.jobs = jobs;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", name='" + name + '\'' +
-                ", skills='" + skills + '\'' +
-                ", roles=" + roles +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", id='" + id + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && userName.equals(user.userName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, userName);
     }
 }

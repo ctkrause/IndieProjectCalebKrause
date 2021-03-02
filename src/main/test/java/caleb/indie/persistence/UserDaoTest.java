@@ -28,7 +28,6 @@ public class UserDaoTest {
     @Test
     void getAllUsersSuccess() {
         List<User> users = genericDao.getAll();
-        logger.debug(users);
         assertEquals(6, users.size());
     }
 
@@ -39,7 +38,7 @@ public class UserDaoTest {
     void getByIdSuccess() {
         User retrievedUser = (User)genericDao.getById(1);
         assertNotNull(retrievedUser);
-        assertEquals("caleb", retrievedUser.getName());
+        assertEquals("Joe", retrievedUser.getFirstName());
     }
 
     /**
@@ -47,7 +46,7 @@ public class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        User newUser = new User(0, "freddyFlinstone", "Fred Flinstone", "Running his little car thingy");
+        User newUser = new User("Fred", "Flinstone", "fFlinstone");
         int id = genericDao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = (User)genericDao.getById(id);
@@ -68,9 +67,9 @@ public class UserDaoTest {
      */
     @Test
     void updateSuccess() {
-        String newName = "Hannah Banana";
+        String newName = "Hannah";
         User userToUpdate = (User)genericDao.getById(3);
-        userToUpdate.setName(newName);
+        userToUpdate.setFirstName(newName);
         genericDao.saveOrUpdate(userToUpdate);
         User retrievedUser = (User)genericDao.getById(3);
         assertEquals(userToUpdate, retrievedUser);
@@ -81,8 +80,8 @@ public class UserDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<User> users = genericDao.getByPropertyLike("name", "c");
-        assertEquals(2, users.size());
+        List<User> users = genericDao.getByPropertyLike("firstName", "d");
+        assertEquals(3, users.size());
     }
 
     /**
@@ -90,8 +89,8 @@ public class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = genericDao.getByPropertyEqual("name", "Levi Krause");
+        List<User> users = genericDao.getByPropertyEqual("firstName", "Joe");
         assertEquals(1, users.size());
-        assertEquals(3, users.get(0).getId());
+        assertEquals(1, users.get(0).getId());
     }
 }

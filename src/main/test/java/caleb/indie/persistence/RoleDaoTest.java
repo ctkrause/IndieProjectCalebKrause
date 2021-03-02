@@ -31,7 +31,7 @@ public class RoleDaoTest {
     void getAllRolesSuccess() {
         List<Role> Roles = genericDao.getAll();
         logger.debug(Roles);
-        assertEquals(8, Roles.size());
+        assertEquals(1, Roles.size());
     }
 
     /**
@@ -39,11 +39,9 @@ public class RoleDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Role retrievedRole = (Role)genericDao.getById(11);
-        logger.debug(retrievedRole);
-        assertNotNull(retrievedRole);
-        assertEquals("BasicUser", retrievedRole.getTitle());
-        assertEquals("caleb", retrievedRole.getUser().getName());
+        Role retrievedRole = (Role)genericDao.getById(1);
+        assertEquals("admin", retrievedRole.getRoleName());
+        assertEquals("Joe", retrievedRole.getUser().getFirstName());
     }
 
     /**
@@ -52,15 +50,14 @@ public class RoleDaoTest {
     @Test
     void insertSuccess() {
         userDao = new GenericDao(User.class);
-        User user = (User)userDao.getById(6);
-        String newTitle = "SuperAdmin";
-        Role newRole = new Role(newTitle, user);
+        User user = (User)userDao.getById(1);
+        String userName = user.getUserName();
+        String roleName = "SuperAdmin";
+        Role newRole = new Role(user, userName, roleName);
         int id = genericDao.insert(newRole);
         Role insertedRole = (Role)genericDao.getById(id);
-        assertNotEquals(0, id);
-        assertEquals(newTitle, insertedRole.getTitle());
-        assertNotNull(insertedRole.getUser());
-        assertEquals("Sheryl Krause" ,insertedRole.getUser().getName());
+        assertEquals(roleName, insertedRole.getRoleName());
+        assertEquals(userName, insertedRole.getUserName());
     }
 
     /**
@@ -69,9 +66,9 @@ public class RoleDaoTest {
     @Test
     void deleteSuccess() {
         userDao = new GenericDao(User.class);
-        genericDao.delete(genericDao.getById(9));
+        genericDao.delete(genericDao.getById(1));
         User existingUser = (User)userDao.getById(1);
-        assertNull(genericDao.getById(9));
+        assertNull(genericDao.getById(1));
         assertEquals(existingUser, userDao.getById(1));
     }
 
@@ -81,11 +78,11 @@ public class RoleDaoTest {
     @Test
     void updateSuccess() {
         String newTitle = "SuperUser";
-        Role RoleToUpdate = (Role)genericDao.getById(9);
-        RoleToUpdate.setTitle(newTitle);
+        Role RoleToUpdate = (Role)genericDao.getById(1);
+        RoleToUpdate.setRoleName(newTitle);
         genericDao.saveOrUpdate(RoleToUpdate);
-        Role retrievedRole = (Role)genericDao.getById(9);
-        assertEquals(newTitle, retrievedRole.getTitle());
+        Role retrievedRole = (Role)genericDao.getById(1);
+        assertEquals(newTitle, retrievedRole.getRoleName());
     }
 
     /**
@@ -93,7 +90,7 @@ public class RoleDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<Role> Roles = genericDao.getByPropertyLike("title", "m");
+        List<Role> Roles = genericDao.getByPropertyLike("userName", "o");
         assertEquals(1, Roles.size());
     }
 
@@ -102,9 +99,8 @@ public class RoleDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Role> Roles = genericDao.getByPropertyEqual("title", "admin");
+        List<Role> Roles = genericDao.getByPropertyEqual("userName", "jcoyne");
         assertEquals(1, Roles.size());
-        assertEquals(9, Roles.get(0).getId());
     }
 
 }
