@@ -14,17 +14,22 @@ leave me time to do the legwork I wanted on my project. The only thing that I di
 config files as I was impelementing them in the weekly work. Hopefully that saves me some time down the road.
 
 ### Week 4 -
-- Double checked all checkpoint one deliverables
-
-More to come here, hopefully. This week I'll be implementing a DAO and creating a javabean which will be annotated for
-Hibernate. Going to be adding unit testing for said DAO and making sure all Hibernate techniques I've learned to this point
-are successfully implemented.
+- Double checked all checkpoint one deliverables and completed review.
 
 ### Week 5 -
+- Added another table to the database, this one for roles, and annotated for a many to one relationship. Unit tested full CRUD
+for the user and the roles table. All tests are passing at this time and code coverage is 100%.
 
 ### Week 6 -
+- Attempted to deploy to AWS, but could not get result set from database to show up in the web browser using Tomcat. Attempted
+several different techniques to resolve the issue, including reworking the servlet and the jsp. JSP is set to index, but no
+  results are appearing in the browser. Deployed week 2 user display exercise to AWS just to get something out there that would
+  verify I had successfully setup my EC2 instance.
 
 ### Week 7 -
+- Reworked my database tables and columns and added a third table for jobs that users might want to store. May still need 
+to tweak database at some point, but after redoing all the testing using these new table names and columns they are all 
+  passing again. Still need to check code coverage, unit test the jobs table, and add authentication. 
 
 ### Week 8 -
 

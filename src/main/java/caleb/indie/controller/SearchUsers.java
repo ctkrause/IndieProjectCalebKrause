@@ -26,7 +26,6 @@ public class SearchUsers extends HttpServlet {
 
         GenericDao userDao = new GenericDao(User.class);
         List<User> users = userDao.getAll();
-        logger.debug(users);
         req.setAttribute("users", users);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
