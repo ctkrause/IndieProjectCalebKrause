@@ -31,9 +31,7 @@
 - [ ] Begin investigating possible web services for gathering job data  
 - [ ] Weekly reflection
 
-### Week 6 - 
-- [ ] Create user signup page
-- [ ] Link user signup to database  
+### Week 6 -
 - [ ] Create AWS account
 - [ ] Create EC2 Instance
 - [ ] Add Elastic IP
@@ -42,6 +40,8 @@
 - [ ] Weekly reflection
 
 ### Week 7 -
+- [ ] Create user signup page
+- [ ] Link user signup to database
 - [ ] Implement form base authentication 
 - [ ] Add a login page and login error page
 - [ ] Update web xml to specify appropriate security constraints

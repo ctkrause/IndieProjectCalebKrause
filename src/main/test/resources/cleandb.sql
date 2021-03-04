@@ -1,4 +1,6 @@
-DELETE FROM users;
-DELETE FROM roles;
-INSERT INTO `users` VALUES (1,'ctkrause','caleb','javaEnt'),(2,'ctkrause','Caleb Krause','Hibernate'),(3,'lSamuel','Levi Krause','Mechanic'),(4,'iNathaniel','Isaiah Krause','phlebotomist'),(5,'nCarl','Nathan Krause','preacher'),(6,'sAnn','Sheryl Krause','doctorOfNursing');
-INSERT INTO `roles` VALUES (9,'Admin',1),(10,'Superuser',1),(11,'BasicUser',1),(12,'BasicUser',2),(13,'BasicUser',3),(14,'BasicUser',4),(15,'BasicUser',5),(16,'BasicUser',6);
+delete from user;
+delete from jobs;
+delete from role;
+INSERT INTO user VALUES (1,'Joe','Coyne','jcoyne','supersecret1'),(2,'Fred','Hensen','fhensen','supersecret2'),(3,'Barney','Curry','bcurry','supersecret3'),(4,'Karen','Mack','kmack','supersecret4'),(5,'Dianne','Klein','dklein','supersecret5'),(6,'Dawn','Tillman','dtillman','supersecret6');
+INSERT INTO `jobs` VALUES (1,'Junior Web Devloper',1),(2,'Junior Java Developer',2),(3,'Front End Developer',2),(4,'Database Admin Internship',1),(5,'Data Scientist',4),(6,'Web Developer Internship for Summer',1),(7,'Am Fam Web Dev Internship',4);
+INSERT INTO `role` VALUES (1,'admin','jcoyne', 1);

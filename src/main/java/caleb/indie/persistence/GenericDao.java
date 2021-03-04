@@ -1,4 +1,4 @@
-package persistence;
+package caleb.indie.persistence;
 
 import java.util.List;
 import javax.persistence.criteria.*;
@@ -56,16 +56,6 @@ public class GenericDao<T> {
         List<T> list = session.createQuery(query).getResultList();
         session.close();
         return list;
-    }
-
-    public List<T> findByPropertyLike(String propertyName, Object value) {
-        Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        query.select(root).where(builder.equal(root.get(propertyName),value));
-
-        return session.createQuery(query).getResultList();
     }
 
     public List<T> getByPropertyEqual(String propertyName, String value) {
