@@ -1,65 +1,62 @@
 # Project Plan
 
 ### Week 2 
-- [ ] Create project repository on GitHub
-- [ ] Complete Problem Statement
-- [ ] Weekly reflection
+- [x] Create project repository on GitHub
+- [x] Complete Problem Statement
+- [x] Weekly reflection
 
 ### Week 3
-- [ ] Create project structure in intellij and push
-- [ ] List technologies, versions and how they will be used
-- [ ] Write project plan
-- [ ] Document application flow in text and pictures
-- [ ] Weekly reflection
+- [x] Create project structure in intellij and push
+- [x] List technologies, versions and how they will be used
+- [x] Write project plan
+- [x] Document application flow in text and pictures
+- [x] Weekly reflection
 
 ### Week 4 - 
-- [ ] Create the database
-- [ ] Add table
-- [ ] Implement DAO
-- [ ] Create javabean and annotate for Hibernate
-- [ ] Create methods in DAO for create, read, update, and delete
-- [ ] Add unit testing to test each method in DAO  
-- [ ] Add Hibernate config and update dependencies
-- [ ] Weekly reflection
+- [x] Create the database
+- [x] Add table
+- [x] Implement DAO
+- [x] Create javabean and annotate for Hibernate
+- [x] Create methods in DAO for create, read, update, and delete
+- [x] Add unit testing to test each method in DAO  
+- [x] Add Hibernate config and update dependencies
+- [x] Weekly reflection
 
 ### Week 5 -
-- [ ] Implement one-to-many relationship and add tables that have a one-to-many relationship
-- [ ] Add entities for added tables
-- [ ] Annotate entities for Hibernate
-- [ ] Update Hibernate config
-- [ ] Add unit tests for methods in DAOs
-- [ ] Begin investigating possible web services for gathering job data  
-- [ ] Weekly reflection
+- [x] Implement one-to-many relationship and add tables that have a one-to-many relationship
+- [x] Add entities for added tables
+- [x] Annotate entities for Hibernate
+- [x] Update Hibernate config
+- [x] Add unit tests for methods in DAOs
+- [x] Begin investigating possible web services for gathering job data  
+- [x] Weekly reflection
 
 ### Week 6 -
-- [ ] Create AWS account
-- [ ] Create EC2 Instance
-- [ ] Add Elastic IP
-- [ ] SSH to Instance, Start Tomcat, Verify MySQL
-- [ ] Begin integrating web service   
-- [ ] Weekly reflection
+- [x] Create AWS account
+- [x] Create EC2 Instance
+- [x] Add Elastic IP
+- [x] SSH to Instance, Start Tomcat, Verify MySQL
+- [x] Weekly reflection
 
 ### Week 7 -
-- [ ] Create user signup page
-- [ ] Link user signup to database
-- [ ] Implement form base authentication 
-- [ ] Add a login page and login error page
-- [ ] Update web xml to specify appropriate security constraints
-- [ ] Continue tweaking and adding web service for job data aggregation
-- [ ] Add logged in user able to store personal information  
-- [ ] Weekly reflection
+- [x] Implement form base authentication 
+- [x] Add a login page and login error page
+- [x] Update web xml to specify appropriate security constraints
+- [x] Weekly reflection
 
 ### Week 8 -
+- [ ] Create user signup page
+- [ ] Link user signup to database
+- [ ] Add logged in user able to store personal information
 - [ ] Implement a RESTful web service to consume
 - [ ] Create a java bean that represents a response from the service
 - [ ] Create a client that calls the service and maps the response to the bean
 - [ ] Write a unit test to verify the client and the javabean work
-- [ ] Continued implementation of job data aggregation
-- [ ] Add job search main page
-- [ ] Verify search without keyword returns all jobs available  
 - [ ] Weekly reflection
 
 ### Week 9 -
+- [ ] Add job search main page
+- [ ] Verify search without keyword returns all jobs available
 - [ ] Create a service that uses existing DAO
 - [ ] Ensure service returns an entity
 - [ ] Continue tweaking job search results page
