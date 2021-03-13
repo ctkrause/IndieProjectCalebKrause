@@ -40,11 +40,9 @@ public class Database {
         try {
             properties.load (this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioe) {
-            logger.debug("Database.loadProperties()...Cannot load the properties file");
-            ioe.printStackTrace();
+            logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
         } catch (Exception e) {
-            logger.debug("Database.loadProperties()...", e);
-            e.printStackTrace();
+            logger.error("Database.loadProperties()...", e);
         }
 
     }
@@ -77,7 +75,7 @@ public class Database {
             try {
                 connection.close();
             } catch (SQLException e) {
-                logger.debug("Cannot close connection", e);
+                logger.error("Cannot close connection", e);
             }
         }
 
@@ -110,9 +108,9 @@ public class Database {
             }
 
         } catch (SQLException se) {
-            logger.error(se);
+            logger.error("There was an SQL Exception", se);
         } catch (Exception e) {
-            logger.error(e);
+            logger.error("There was an exception", e);
         } finally {
             disconnect();
         }
