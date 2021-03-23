@@ -45,17 +45,17 @@
 - [x] Weekly reflection
 
 ### Week 8 -
-- [ ] Create user signup page
-- [ ] Link user signup to database
-- [ ] Add logged in user able to store personal information
-- [ ] Implement a RESTful web service to consume
-- [ ] Create a java bean that represents a response from the service
-- [ ] Create a client that calls the service and maps the response to the bean
-- [ ] Write a unit test to verify the client and the javabean work
-- [ ] Weekly reflection
+- [x] Link user signup to database
+- [x] Implement a RESTful web service to consume
+- [x] Create a java bean that represents a response from the service
+- [x] Create a client that calls the service and maps the response to the bean
+- [x] Write a unit test to verify the client and the javabean work
+- [x] Weekly reflection
 
 ### Week 9 -
+- [ ] Create user signup page
 - [ ] Add job search main page
+- [ ] Add logged in user able to store personal information
 - [ ] Verify search without keyword returns all jobs available
 - [ ] Create a service that uses existing DAO
 - [ ] Ensure service returns an entity
