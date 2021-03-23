@@ -33,6 +33,11 @@ to tweak database at some point, but after redoing all the testing using these n
 
 ### Week 8 -
 
+- Played around with lots of different APIs, but I wasn't able to implement any of the ones I was trying to use.
+- Figured out how to use a key and get information back, but had some difficulty progressing from there. 
+- Reverted to the pet API in order to complete the week eight exercise and test. 
+- Wrote an applicable unit test and verified receipt of the correct information. 
+
 ### Week 9 -
 
 ### Week 10 -
