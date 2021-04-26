@@ -53,21 +53,21 @@
 - [x] Weekly reflection
 
 ### Week 9 -
-- [ ] Create user signup page
+- [x] Create user signup page
 - [ ] Add job search main page
 - [ ] Add logged in user able to store personal information
 - [ ] Verify search without keyword returns all jobs available
-- [ ] Create a service that uses existing DAO
+- [x] Create a service that uses existing DAO
 - [ ] Ensure service returns an entity
 - [ ] Continue tweaking job search results page
-- [ ] Verify that all users/roles are stored correctly
+- [x] Verify that all users/roles are stored correctly
 - [ ] Double check all login features are working properly
 - [ ] Add jobs searchable by salary
 - [ ] Weekly reflection
 
 ### Week 10 - 
 - [ ] Test unit testing code coverage and implement any necessary testing
-- [ ] Do any necessary research to fully implement web service chosen for screen scraping
+- [ ] Do any necessary research to fully implement API
 - [ ] Test job searches by multiple keywords
 - [ ] Verify user accounts store skilles/experience/job searches
 - [ ] Add job search store by user account  
@@ -75,7 +75,7 @@
 
 ### Week 11 - 
 - [ ] Assuming project has received feedback, implement any changes necessary
-- [ ] Test screen scraping web service for functionality 
+- [ ] Test API for functionality 
 - [ ] Verify job searches are returning accurate information/applicable jobs
 - [ ] Begin any necessary refactors 
 - [ ] Test unit tests with code coverage

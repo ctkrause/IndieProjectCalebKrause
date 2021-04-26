@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Insert title here</title>
+    <title>Signup New User - Work Search Agg</title>
 
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
