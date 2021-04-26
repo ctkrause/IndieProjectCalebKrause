@@ -2,7 +2,8 @@
 <html>
 <body>
     <h2>Users</h2>
-    <a href="admin.jsp">Click Here To Access Admin Page</a>
+    <a href="admin.jsp">Click Here To Access Admin Page</a><br>
+    <a href="register.jsp">Click Here To Signup As New User</a>
     <table>
         <th>Username</th>
         <th>First Name</th>
