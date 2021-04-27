@@ -11,6 +11,7 @@
     <h1>Welcome To Work Search Aggregator</h1>
     <a href="admin.jsp">Click Here To Access Admin Page</a><br>
     <a href="register.jsp">Click Here To Signup As New User</a>
+    <a href="listAllJobs.jsp">Click Here To View All Jobs</a>
     <br><br>
     <table>
         <th>Username</th>
