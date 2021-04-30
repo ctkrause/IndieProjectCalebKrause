@@ -12,7 +12,7 @@
     <a href="index.jsp">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
     <a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
     <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
-    <a href="allJobs.jsp">&bull;&nbsp;View All Jobs</a>&nbsp;&nbsp;&nbsp;
+    <a href="displayJobs.jsp">&bull;&nbsp;View All Jobs</a>&nbsp;&nbsp;&nbsp;
     <br><br>
     <table>
         <th>Username</th>
