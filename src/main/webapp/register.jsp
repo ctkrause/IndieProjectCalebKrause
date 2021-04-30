@@ -14,6 +14,7 @@
 
 </head>
 <body>
+<a href="index.jsp">Home Page</a>
 <div class="container">
     <div class="row text-center" style="color: tomato;">
         <h2>New User Registration</h2>

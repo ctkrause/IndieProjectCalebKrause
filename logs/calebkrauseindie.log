@@ -63,3 +63,8 @@
 [DEBUG] 2021-04-27 15:12:49.486 [main] RoleDaoTest - [Role{id=1, userName='jcoyne', roleName='admin'}]
 [DEBUG] 2021-04-27 15:12:50.092 [main] GenericDao - Searching for order with firstName = Joe
 [DEBUG] 2021-04-27 15:12:50.214 [main] GenericDao - Searching for order with firstName = d
+[DEBUG] 2021-04-27 18:23:45.562 [main] GenericDao - Searching for order with userName = jcoyne
+[DEBUG] 2021-04-27 18:23:46.352 [main] GenericDao - Searching for order with userName = o
+[DEBUG] 2021-04-27 18:23:46.663 [main] RoleDaoTest - [Role{id=1, userName='jcoyne', roleName='admin'}]
+[DEBUG] 2021-04-27 18:23:47.777 [main] GenericDao - Searching for order with firstName = Joe
+[DEBUG] 2021-04-27 18:23:48.004 [main] GenericDao - Searching for order with firstName = d

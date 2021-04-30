@@ -15,6 +15,7 @@
           crossorigin="anonymous">
 </head>
 <body>
+<a href="index.jsp">Home Page</a>
 <h2>Welcome To The Admin Page!</h2>
 </body>
 </html>

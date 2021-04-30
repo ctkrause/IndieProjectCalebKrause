@@ -14,6 +14,7 @@
 
 </head>
 <body>
+<a href="index.jsp">Home Page</a>
 <div class="container">
     <div class="row col-md-10 col-md-offset-3">
         <div class="card card-body">

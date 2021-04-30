@@ -9,9 +9,10 @@
 <html>
 <body>
     <h1>Welcome To Work Search Aggregator</h1>
-    <a href="admin.jsp">Click Here To Access Admin Page</a><br>
-    <a href="register.jsp">Click Here To Signup As New User</a>
-    <a href="listAllJobs.jsp">Click Here To View All Jobs</a>
+    <a href="index.jsp">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
+    <a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
+    <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
+    <a href="allJobs.jsp">&bull;&nbsp;View All Jobs</a>&nbsp;&nbsp;&nbsp;
     <br><br>
     <table>
         <th>Username</th>

@@ -1,9 +1,7 @@
 package caleb.indie.controller;
 
-import caleb.indie.entity.ResultsItem;
-import caleb.indie.entity.User;
-import caleb.indie.persistence.GenericDao;
-import caleb.indie.persistence.JobService;
+import caleb.indie.entity.JobsItem;
+import caleb.indie.persistence.NetClientGet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,17 +15,22 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(
-        name = "listAllJobs", urlPatterns = {"/listAllJobs"} )
+        name = "allJobs", urlPatterns = {"/allJobs"} )
 
-public class DisplayAllJobs extends HttpServlet {
+public class GetJobs extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<ResultsItem> jobs = JobService.fetchJobs(0, 50);
-        req.setAttribute("jobs", jobs);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/listAllJobs.jsp");
+
+        NetClientGet net = new NetClientGet();
+        JobsItem jobs = new JobsItem();
+        String jobsItem;
+        jobsItem = net.retrieveRemote();
+        req.setAttribute("jobsItem", jobsItem);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/allJobs.jsp");
         dispatcher.forward(req, resp);
     }
+
 }
