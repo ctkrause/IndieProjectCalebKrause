@@ -1,6 +1,8 @@
 package caleb.indie.controller;
 
+import caleb.indie.entity.JobsItem;
 import caleb.indie.entity.User;
+import caleb.indie.persistence.ApiDao;
 import caleb.indie.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

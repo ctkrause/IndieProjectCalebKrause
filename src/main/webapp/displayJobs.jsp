@@ -7,8 +7,9 @@
     <title>Title</title>
 </head>
 <body>
+${jobs}
 <c:choose>
-    <c:when test="${users.size() > 0}">
+    <c:when test="${jobs.size() > 0}">
         <table>
             <tr>
                 <th>Username</th>
