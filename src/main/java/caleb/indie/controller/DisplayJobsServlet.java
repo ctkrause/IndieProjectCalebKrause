@@ -1,6 +1,7 @@
 package caleb.indie.controller;
 
 import caleb.indie.entity.User;
+import caleb.indie.persistence.ApiDao;
 import caleb.indie.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,18 +15,22 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(
-        name = "displayJobs", urlPatterns = {"/displayJobs"})
+        name = "index", urlPatterns = {"/index"} )
 
-public class AllJobs extends HttpServlet {
+public class DisplayJobsServlet extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao userDao = new GenericDao(User.class);
-        List<User> users = userDao.getAll();
-        req.setAttribute("users", users);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayJobs.jsp");
+        ApiDao apiDao = new ApiDao();
+        try {
+            req.setAttribute("jobs", apiDao.getAllJobs());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
     }
+
 }

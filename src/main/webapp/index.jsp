@@ -18,11 +18,11 @@
         <th>Username</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <c:forEach var="users" items="${users}">
+        <c:forEach var="jobs" items="${jobs}">
             <tr>
-                <td>${users.userName}</td>
-                <td>${users.firstName}</td>
-                <td>${users.lastName}</td>
+                <td>${jobs.companyName}</td>
+                <td>${jobs.salary}</td>
+                <td>${jobs.title}</td>
             </tr>
         </c:forEach>
     </table>
