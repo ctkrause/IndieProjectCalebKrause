@@ -1,12 +1,9 @@
 package caleb.indie.controller;
 
-import caleb.indie.entity.JobsItem;
 import caleb.indie.entity.User;
-import caleb.indie.persistence.ApiDao;
 import caleb.indie.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +22,6 @@ public class SearchUsers extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         GenericDao userDao = new GenericDao(User.class);
         List<User> users = userDao.getAll();
         req.setAttribute("users", users);

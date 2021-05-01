@@ -1,7 +1,9 @@
 package caleb.indie.controller;
 
-import caleb.indie.entity.JobsItem;
-import caleb.indie.persistence.ApiDao;
+import caleb.indie.entity.User;
+import caleb.indie.persistence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,21 +14,18 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(
-        urlPatterns = {"/allJobs"})
+        name = "displayJobs", urlPatterns = {"/displayJobs"})
 
 public class AllJobs extends HttpServlet {
+
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ApiDao apiDAO = new ApiDao();
-        JobsItem jobs = null;
-        try {
-            jobs = apiDAO.getAllJobs();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        req.setAttribute("jobs", jobs);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("displayJobs.jsp");
+        GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getAll();
+        req.setAttribute("users", users);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayJobs.jsp");
         dispatcher.forward(req, resp);
-        System.out.println(jobs);
     }
 }
