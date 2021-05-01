@@ -12,17 +12,18 @@
     <a href="index.jsp">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
     <a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
     <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
-    <a href="displayJobs.jsp">&bull;&nbsp;View All Jobs</a>&nbsp;&nbsp;&nbsp;
     <br><br>
     <table>
-        <th>Username</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <tr>
+            <th>Company Name</th>
+            <th>Title</th>
+            <th>Salary</th>
+        </tr>
         <c:forEach var="jobs" items="${jobs}">
             <tr>
-                <td>${jobs.companyName}</td>
-                <td>${jobs.salary}</td>
-                <td>${jobs.title}</td>
+                <td>${jobs.getCompanyName()}</td>
+                <td>${jobs.getTitle()}</td>
+                <td>${jobs.getSalary()}</td>
             </tr>
         </c:forEach>
     </table>

@@ -25,7 +25,7 @@ public class DisplayJobsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ApiDao apiDao = new ApiDao();
         try {
-            req.setAttribute("jobs", apiDao.getAllJobs());
+            req.setAttribute("jobs", apiDao.getAllJobs().getJobs());
         } catch (Exception e) {
             e.printStackTrace();
         }
