@@ -56,9 +56,9 @@
 - [x] Create user signup page
 - [ ] Add job search main page
 - [ ] Add logged in user able to store personal information
-- [ ] Verify search without keyword returns all jobs available
+- [x] Verify search without keyword returns all jobs available
 - [x] Create a service that uses existing DAO
-- [ ] Ensure service returns an entity
+- [x] Ensure service returns an entity
 - [ ] Continue tweaking job search results page
 - [x] Verify that all users/roles are stored correctly
 - [ ] Double check all login features are working properly
@@ -67,15 +67,15 @@
 
 ### Week 10 - 
 - [ ] Test unit testing code coverage and implement any necessary testing
-- [ ] Do any necessary research to fully implement API
+- [x] Do any necessary research to fully implement API
 - [ ] Test job searches by multiple keywords
-- [ ] Verify user accounts store skilles/experience/job searches
+- [ ] Verify user accounts store skills/experience/job searches
 - [ ] Add job search store by user account  
 - [ ] Weekly reflection
 
 ### Week 11 - 
-- [ ] Assuming project has received feedback, implement any changes necessary
-- [ ] Test API for functionality 
+- [x] Assuming project has received feedback, implement any changes necessary
+- [x] Test API for functionality 
 - [ ] Verify job searches are returning accurate information/applicable jobs
 - [ ] Begin any necessary refactors 
 - [ ] Test unit tests with code coverage
@@ -88,8 +88,7 @@
 - [ ] Weekly reflection
 
 ### Week 13 - 
-- [ ] Add admin capability
-- [ ] Add admin ability remove job postings as needed
+- [x] Add admin capability
 - [ ] Ensure admin can delete inactive users if necessary
 - [ ] Weekly reflection
 
