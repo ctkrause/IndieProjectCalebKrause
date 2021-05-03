@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import caleb.indie.entity.Role;
 import caleb.indie.persistence.GenericDao;
 import caleb.indie.entity.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -20,6 +23,7 @@ import caleb.indie.entity.User;
 public class UserController extends HttpServlet {
     private static final long serialVersionUID = 5462223600l;
     private GenericDao genericDao;
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     public void init() {
         genericDao = new GenericDao(User.class);
@@ -36,16 +40,13 @@ public class UserController extends HttpServlet {
     }
 
     private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
         User user = new User();
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setUserName(username);
-        user.setPassword(password);
+        user.setFirstName(request.getParameter("firstName"));
+        user.setLastName(request.getParameter("lastName"));
+        user.setUserName(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
+        logger.debug("Adding User: " + user);
+
 
         genericDao.saveOrUpdate(user);
 

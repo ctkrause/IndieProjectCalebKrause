@@ -17,6 +17,7 @@
 <body>
 <a href="index.jsp">Home Page</a>
 <h2>Welcome To The Admin Page!</h2>
+<a href="searchUser.jsp">Click to review application users</a>
 <a href="logout.jsp">Click Here To Logout</a>
 </body>
 </html>

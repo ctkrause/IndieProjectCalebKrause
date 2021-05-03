@@ -1,0 +1,9 @@
+[INFO ] 2021-05-03 15:10:29.723 [http-nio-8080-exec-7] Version - HHH000412: Hibernate Core {5.4.4.Final}
+[INFO ] 2021-05-03 15:10:31.105 [http-nio-8080-exec-7] Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[INFO ] 2021-05-03 15:10:31.406 [http-nio-8080-exec-7] C3P0ConnectionProvider - HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/indie
+[INFO ] 2021-05-03 15:10:31.407 [http-nio-8080-exec-7] C3P0ConnectionProvider - HHH10001001: Connection properties: {password=****, user=root}
+[INFO ] 2021-05-03 15:10:31.408 [http-nio-8080-exec-7] C3P0ConnectionProvider - HHH10001003: Autocommit mode: false
+[INFO ] 2021-05-03 15:10:31.915 [http-nio-8080-exec-7] C3P0ConnectionProvider - HHH10001007: JDBC isolation level: <unknown>
+[INFO ] 2021-05-03 15:10:32.828 [http-nio-8080-exec-7] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[INFO ] 2021-05-03 15:10:34.038 [http-nio-8080-exec-7] beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+[INFO ] 2021-05-03 15:10:35.293 [http-nio-8080-exec-7] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
