@@ -13,6 +13,6 @@
 <body>
     <h1>Oopsie! It appears we've encountered an error.</h1>
     <h2>Our devs are working hard to resolve the issue.</h2>
-    <a href="index.jsp">Click here to navigate back to home page.</a>
+    <a href="index">Click here to navigate back to home page.</a>
 </body>
 </html>

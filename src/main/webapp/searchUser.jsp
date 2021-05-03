@@ -5,31 +5,29 @@
   Time: 2:19 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <body>
+<a href="index">Back to home page</a>
 
-<div class="container-fluid">
-    <h2>Search Results: </h2>
-    <table id="userTable" class="display" cellspacing="0" width="100%">
-        <thead>
-        <th>Name</th>
-        <th>User Name</th>
-        <th>Age</th>
-        </thead>
-        <tbody>
+
+    <h2>Work Search Aggregator Users</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
         <c:forEach var="user" items="${users}">
             <tr>
-                <td>${user.firstName} ${user.lastName}</td>
+                <td>${user.firstName}</td>
+                <td>${user.lastName}</td>
                 <td>${user.userName}</td>
-                <td>${user.age}</td>
             </tr>
-
-
         </c:forEach>
-        </tbody>
+
     </table>
-</div>
 
 </body>
 </html>

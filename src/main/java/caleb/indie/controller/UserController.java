@@ -23,10 +23,12 @@ import org.apache.logging.log4j.Logger;
 public class UserController extends HttpServlet {
     private static final long serialVersionUID = 5462223600l;
     private GenericDao genericDao;
+    private GenericDao roleDao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     public void init() {
         genericDao = new GenericDao(User.class);
+        roleDao = new GenericDao(Role.class);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,10 +47,8 @@ public class UserController extends HttpServlet {
         user.setLastName(request.getParameter("lastName"));
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
-        logger.debug("Adding User: " + user);
-
-
         genericDao.saveOrUpdate(user);
+        logger.debug("Adding User: " + user);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("register-success.jsp");
         dispatcher.forward(request, response);

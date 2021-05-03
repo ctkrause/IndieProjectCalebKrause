@@ -15,7 +15,7 @@
           crossorigin="anonymous">
 </head>
 <body>
-<a href="index.jsp">Home Page</a>
+<a href="index">Home Page</a>
 <FORM ACTION="j_security_check" METHOD="POST">
     <TABLE>
         <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">

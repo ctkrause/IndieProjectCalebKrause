@@ -30,17 +30,17 @@ public class SearchUsers extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        GenericDao userDao = new GenericDao(User.class);
+        GenericDao<User> userDao = new GenericDao(User.class);
         List<User> users = userDao.getAll();
-        req.setAttribute("users", users);
-        /** if (req.getParameter("submit").equals("search")) {
+        if (req.getParameter("submit").equals("search")) {
             req.setAttribute("users", userDao.getByPropertyLike("lastName", req.getParameter("searchTerm")));
         } else {
-            req.setAttribute("users", userDao.getAll());
-        } **/
+            req.setAttribute("users", users);
+        }
+
+        System.out.println(users);
+        req.setAttribute("users", users);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchUser.jsp");
         dispatcher.forward(req, resp);
-        logger.info(users);
     }
 }

@@ -15,9 +15,9 @@
           crossorigin="anonymous">
 </head>
 <body>
-<a href="index.jsp">Home Page</a>
+<a href="index">Home Page</a>
 <h2>Welcome To The Admin Page!</h2>
-<a href="searchUser.jsp">Click to review application users</a>
+<a href="search.jsp">Click to search users or view all users</a><br><br>
 <a href="logout.jsp">Click Here To Logout</a>
 </body>
 </html>

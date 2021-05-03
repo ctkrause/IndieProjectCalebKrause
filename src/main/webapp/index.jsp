@@ -9,7 +9,7 @@
 <html>
 <body>
     <h1>Welcome To Work Search Aggregator</h1>
-    <a href="index.jsp">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
+    <a href="index">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
     <a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
     <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
     <br><br>
@@ -18,12 +18,14 @@
             <th>Company Name</th>
             <th>Title</th>
             <th>Salary</th>
+            <th>Candidate Required Location</th>
         </tr>
         <c:forEach var="jobs" items="${jobs}">
             <tr>
                 <td>${jobs.getCompanyName()}</td>
                 <td>${jobs.getTitle()}</td>
                 <td>${jobs.getSalary()}</td>
+                <td>${jobs.getCandidateRequiredLocation()}</td>
             </tr>
         </c:forEach>
     </table>

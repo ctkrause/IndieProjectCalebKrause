@@ -61,8 +61,9 @@ public class User {
      * Gets id.
      *
      * @return the id
+     * @param user
      */
-    public int getId() {
+    public int getId(User user) {
         return id;
     }
 
