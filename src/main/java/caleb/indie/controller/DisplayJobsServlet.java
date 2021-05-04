@@ -29,6 +29,8 @@ public class DisplayJobsServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        String searchBox = req.getParameter("input#myinput[value]");
+        logger.debug(searchBox);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
     }

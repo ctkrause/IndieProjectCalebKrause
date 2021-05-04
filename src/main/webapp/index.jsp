@@ -13,6 +13,8 @@
     <a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
     <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
     <br><br>
+
+
     <table>
         <tr>
             <th>Company Name</th>
