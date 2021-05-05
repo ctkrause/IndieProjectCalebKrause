@@ -14,20 +14,37 @@
     <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
     <br><br>
 
-
-    <table>
+    <form action="index">
+        <p>Please enter your search criteria:</p>
+    <label for="search">Search Criteria:</label>
+    <input type="text" id="search" name="search">
+    <br>
+    <input type="radio" id="company" name="criteria" value="company">
+    <label for="company">Company</label><br>
+    <input type="radio" id="category" name="criteria" value="category">
+    <label for="category">Category</label><br>
+    <input type="radio" id="titledescription" name="criteria" value="titledescription">
+    <label for="titledescription">Title/Description</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <table style="text-align: center; padding: 15px; width: 100%; border-spacing: 15px;">
         <tr>
             <th>Company Name</th>
             <th>Title</th>
-            <th>Salary</th>
+            <th>Category</th>
             <th>Candidate Required Location</th>
+            <th>Job Posting URL</th>
+            <th>Salary</th>
         </tr>
         <c:forEach var="jobs" items="${jobs}">
             <tr>
                 <td>${jobs.getCompanyName()}</td>
                 <td>${jobs.getTitle()}</td>
-                <td>${jobs.getSalary()}</td>
+                <td>${jobs.getCategory()}</td>
                 <td>${jobs.getCandidateRequiredLocation()}</td>
+                <td><a href="${jobs.getUrl()}">${jobs.getUrl()}</a></td>
+                <td>${jobs.getSalary()}</td>
             </tr>
         </c:forEach>
     </table>

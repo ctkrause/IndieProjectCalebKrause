@@ -24,13 +24,26 @@ public class DisplayJobsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ApiDao apiDao = new ApiDao();
+        String searchBox = req.getParameter("search");
+        String radioChoice = req.getParameter("criteria");
         try {
-            req.setAttribute("jobs", apiDao.getAllJobs().getJobs());
+            if (searchBox == null) {
+                req.setAttribute("jobs", apiDao.getAllJobs().getJobs());
+            } else if (radioChoice.equals("company")) {
+                String newSearchBox = searchBox.replaceAll(" ", "%20");
+                req.setAttribute("jobs", apiDao.getJobsByCompany(newSearchBox).getJobs());
+            } else if (radioChoice.equals("category")) {
+                String newSearchBox = searchBox.replaceAll(" ", "%20");
+                req.setAttribute("jobs", apiDao.getJobsByCategory(newSearchBox).getJobs());
+            } else {
+                String newSearchBox = searchBox.replaceAll(" ", "%20");
+                req.setAttribute("jobs", apiDao.getJobsByDescription(newSearchBox).getJobs());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String searchBox = req.getParameter("input#myinput[value]");
-        logger.debug(searchBox);
+
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
     }

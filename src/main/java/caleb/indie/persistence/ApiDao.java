@@ -32,4 +32,31 @@ public class ApiDao implements PropertiesLoaderInterface {
         return jobbies;
     }
 
+    public JobsItem getJobsByCompany(String searchTerm) throws Exception {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("https://remotive.io/api/remote-jobs?company_name=" + searchTerm);
+        String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        JobsItem jobbies = mapper.readValue(response, JobsItem.class);
+        return jobbies;
+    }
+
+    public JobsItem getJobsByCategory(String searchTerm) throws Exception {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("https://remotive.io/api/remote-jobs?category=" + searchTerm);
+        String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        JobsItem jobbies = mapper.readValue(response, JobsItem.class);
+        return jobbies;
+    }
+
+    public JobsItem getJobsByDescription(String searchTerm) throws Exception {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("https://remotive.io/api/remote-jobs?search=" + searchTerm);
+        String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        JobsItem jobbies = mapper.readValue(response, JobsItem.class);
+        return jobbies;
+    }
+
 }
