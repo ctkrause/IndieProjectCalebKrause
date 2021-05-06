@@ -25,7 +25,7 @@
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.userName}</td>
-                <td><form action="/searchUser" method="post"><input type="submit" name="delete" value="delete"> / <input type="submit" name="edit" value="edit"></form></td>
+                <td><form action="deleteUser" method="post"><input type="submit" name="delete" value="delete">  /  <input type="submit" name="edit" value="edit"></form></td>
             </tr>
         </c:forEach>
 
