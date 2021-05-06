@@ -47,10 +47,20 @@ public class UserController extends HttpServlet {
         user.setLastName(request.getParameter("lastName"));
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
-        genericDao.saveOrUpdate(user);
-        logger.debug("Adding User: " + user);
+
+
+        Role role = new Role();
+        String userName = user.getUserName();
+        int userId = user.getId(user);
+        role.setUser(user);
+        role.setRoleName("user");
+        role.setUserName(userName);
+        role.setId(userId);
+        genericDao.insert(user);
+        roleDao.insert(role);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("register-success.jsp");
         dispatcher.forward(request, response);
+
     }
 }

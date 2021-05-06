@@ -13,17 +13,19 @@
 
 
     <h2>Work Search Aggregator Users</h2>
-    <table>
+    <table style="text-align: center; padding: 15px; width: 60%; border-spacing: 15px;">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Username</th>
+            <th>Delete/Edit User</th>
         </tr>
         <c:forEach var="user" items="${users}">
             <tr>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.userName}</td>
+                <td><form action="/searchUser" method="post"><input type="submit" name="delete" value="delete"> / <input type="submit" name="edit" value="edit"></form></td>
             </tr>
         </c:forEach>
 
