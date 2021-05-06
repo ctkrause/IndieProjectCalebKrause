@@ -1,8 +1,6 @@
 package caleb.indie.controller;
 
-import caleb.indie.entity.User;
 import caleb.indie.persistence.ApiDao;
-import caleb.indie.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.RequestDispatcher;
@@ -12,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(
         name = "index", urlPatterns = {"/index"} )

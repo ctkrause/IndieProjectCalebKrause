@@ -12,7 +12,6 @@
           crossorigin="anonymous">
 </head>
 
-</head>
 <body>
 <a href="index">Home Page</a>
 <div class="container">
@@ -30,25 +29,25 @@
                 <form action="<%=request.getContextPath()%>/register" method="post">
 
                     <div class="form-group">
-                        <label for="uname">First Name:</label> <input type="text"
-                                                                      class="form-control" id="uname" placeholder="First Name"
+                        <label for="firstName">First Name:</label> <input type="text"
+                                                                      class="form-control" id="firstName" placeholder="First Name"
                                                                       name="firstName" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="uname">Last Name:</label> <input type="text"
-                                                                     class="form-control" id="uname" placeholder="last Name"
+                        <label for="lastName">Last Name:</label> <input type="text"
+                                                                     class="form-control" id="lastName" placeholder="last Name"
                                                                      name="lastName" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="uname">User Name:</label> <input type="text"
+                        <label for="username">User Name:</label> <input type="text"
                                                                      class="form-control" id="username" placeholder="User Name"
                                                                      name="username" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="uname">Password:</label> <input type="password"
+                        <label for="password">Password:</label> <input type="password"
                                                                     class="form-control" id="password" placeholder="Password"
                                                                     name="password" required>
                     </div>
