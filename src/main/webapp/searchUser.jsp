@@ -10,7 +10,6 @@
 <html>
 <body>
 <a href="index">Back to home page</a>
-    <c:out value="${users}"></c:out>
 
     <h2>Work Search Aggregator Users</h2>
     <table style="text-align: center; padding: 15px; width: 60%; border-spacing: 15px;">
@@ -19,6 +18,7 @@
             <th>Last Name</th>
             <th>Username</th>
             <th>Id</th>
+            <th>Delete User</th>
         </tr>
         <c:forEach var="user" items="${users}">
             <tr>
@@ -26,6 +26,7 @@
                 <td>${user.lastName}</td>
                 <td>${user.userName}</td>
                 <td>${user.id}</td>
+                <td><a href="delete?id=${user.id}">Delete User</a></td>
             </tr>
         </c:forEach>
 

@@ -32,7 +32,7 @@ public class SearchUsers extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<User> userDao = new GenericDao(User.class);
         List<User> users = userDao.getAll();
-        System.out.println(users);
+        logger.info(users);
         req.setAttribute("users", users);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchUser.jsp");
         dispatcher.forward(req, resp);
