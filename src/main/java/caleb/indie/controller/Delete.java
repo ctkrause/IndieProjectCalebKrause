@@ -30,7 +30,6 @@ public class Delete extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<User> userData = new GenericDao(User.class);
-        User user = new User();
         int id = Integer.valueOf(req.getParameter("id"));
         User usertodelete = userData.getById(id);
         userData.delete(usertodelete);
