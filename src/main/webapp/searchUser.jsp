@@ -10,7 +10,7 @@
 <html>
 <body>
 <a href="index">Back to home page</a>
-
+    <c:out value="${users}"></c:out>
 
     <h2>Work Search Aggregator Users</h2>
     <table style="text-align: center; padding: 15px; width: 60%; border-spacing: 15px;">
@@ -18,14 +18,14 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Username</th>
-            <th>Delete/Edit User</th>
+            <th>Id</th>
         </tr>
         <c:forEach var="user" items="${users}">
             <tr>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.userName}</td>
-                <td><form action="deleteUser" method="post"><input type="submit" name="delete" value="delete"></form></td>
+                <td>${user.id}</td>
             </tr>
         </c:forEach>
 

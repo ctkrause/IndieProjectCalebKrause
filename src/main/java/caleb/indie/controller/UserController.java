@@ -50,7 +50,7 @@ public class UserController extends HttpServlet {
 
         Role role = new Role();
         String userName = user.getUserName();
-        int userId = user.getId(user);
+        int userId = user.getId();
         role.setUser(user);
         role.setRoleName("user");
         role.setUserName(userName);

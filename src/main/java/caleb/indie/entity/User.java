@@ -17,6 +17,7 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name= "native",strategy= "native")
+    @Column(name = "id")
     private int id;
 
     @Column(name = "first_name")
@@ -51,7 +52,8 @@ public class User {
      * @param lastName  the last name
      * @param userName  the user name
      */
-    public User(String firstName, String lastName, String userName) {
+    public User(int id, String firstName, String lastName, String userName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -63,7 +65,7 @@ public class User {
      * @return the id
      * @param user
      */
-    public int getId(User user) {
+    public int getId() {
         return id;
     }
 
