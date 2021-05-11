@@ -10,4 +10,4 @@ User '<%=request.getRemoteUser()%>' has been logged out.
 <% session.invalidate(); %>
 
 <br/><br/>
-<a href="index">Click here to go to home page.</a>
+<a href="index">Click here to go back to the home page.</a>
