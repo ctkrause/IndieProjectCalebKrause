@@ -59,55 +59,55 @@
 - [x] Verify search without keyword returns all jobs available
 - [x] Create a service that uses existing DAO
 - [x] Ensure service returns an entity
-- [ ] Continue tweaking job search results page
+- [x] Continue tweaking job search results page
 - [x] Verify that all users/roles are stored correctly
-- [ ] Double check all login features are working properly
+- [x] Double check all login features are working properly
 - [ ] Add jobs searchable by salary
-- [ ] Weekly reflection
+- [x] Weekly reflection
 
 ### Week 10 - 
-- [ ] Test unit testing code coverage and implement any necessary testing
+- [x] Test unit testing code coverage and implement any necessary testing
 - [x] Do any necessary research to fully implement API
-- [ ] Test job searches by multiple keywords
+- [x] Test job searches by multiple keywords
 - [ ] Verify user accounts store skills/experience/job searches
 - [ ] Add job search store by user account  
-- [ ] Weekly reflection
+- [x] Weekly reflection
 
 ### Week 11 - 
 - [x] Assuming project has received feedback, implement any changes necessary
 - [x] Test API for functionality 
-- [ ] Verify job searches are returning accurate information/applicable jobs
-- [ ] Begin any necessary refactors 
-- [ ] Test unit tests with code coverage
-- [ ] Weekly reflection
+- [x] Verify job searches are returning accurate information/applicable jobs
+- [x] Begin any necessary refactors 
+- [x] Test unit tests with code coverage
+- [x] Weekly reflection
 
 ### Week 12 - 
 - [ ] Implement employer ability to add job to site
 - [ ] Ensure employer can update job post salary/info/title/etc.
-- [ ] Verify that newly added jobs show up in job searches
-- [ ] Weekly reflection
+- [x] Verify that newly added jobs show up in job searches
+- [x] Weekly reflection
 
 ### Week 13 - 
 - [x] Add admin capability
-- [ ] Ensure admin can delete inactive users if necessary
-- [ ] Weekly reflection
+- [x] Ensure admin can delete inactive users if necessary
+- [x] Weekly reflection
 
 ### Week 14 - 
 - [ ] Implement edit user profile
 - [ ] Ensure that users can change their skills/experience level/what they're looking for
 - [ ] Add capability to retrieve lost passwords if time permits
-- [ ] Test all implemented web services and RESTful services
-- [ ] Weekly reflection
+- [x] Test all implemented web services and RESTful services
+- [x] Weekly reflection
 
 ### Week 15 - 
-- [ ] Create video, add video link to readme.md
-- [ ] Finalize all documenation/javadocs
-- [ ] Code quality check
-- [ ] Re-check unit testing code coverage
-- [ ] Weekly reflection
+- [x] Create video, add video link to readme.md
+- [x] Finalize all documenation/javadocs
+- [x] Code quality check
+- [x] Re-check unit testing code coverage
+- [x] Weekly reflection
 
 ### Week 16 -
-- [ ] Final cleanup/refactor/etc.
-- [ ] Final presentation
-- [ ] Weekly reflection
+- [x] Final cleanup/refactor/etc.
+- [x] Final presentation
+- [x] Weekly reflection
 
