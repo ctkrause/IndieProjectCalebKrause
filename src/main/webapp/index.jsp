@@ -48,6 +48,8 @@
         </tr>
     </c:forEach>
 </table>
+<br><br>
 </body>
+<jsp:include page="footer.jsp" />
 </html>
 
