@@ -7,14 +7,31 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+/**
+ * The type Generic dao.
+ *
+ * @param <T> the type parameter
+ */
 public class GenericDao<T> {
     private Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Instantiates a new Generic dao.
+     *
+     * @param type the type
+     */
     public GenericDao(Class<T> type) {
         this.type = type;
     }
 
+    /**
+     * Gets by id.
+     *
+     * @param <T> the type parameter
+     * @param id  the id
+     * @return the by id
+     */
     public <T>T getById(int id) {
         Session session = getSession();
         T entity = (T)session.get(type, id);
@@ -22,6 +39,11 @@ public class GenericDao<T> {
         return entity;
     }
 
+    /**
+     * Delete.
+     *
+     * @param entity the entity
+     */
     public void delete(T entity) {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
@@ -30,6 +52,12 @@ public class GenericDao<T> {
         session.close();
     }
 
+    /**
+     * Insert int.
+     *
+     * @param entity the entity
+     * @return the int
+     */
     public int insert(T entity) {
         int id = 0;
         Session session = getSession();
@@ -40,6 +68,11 @@ public class GenericDao<T> {
         return id;
     }
 
+    /**
+     * Save or update.
+     *
+     * @param entity the entity
+     */
     public void saveOrUpdate(T entity) {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
@@ -48,6 +81,11 @@ public class GenericDao<T> {
         session.close();
     }
 
+    /**
+     * Gets all.
+     *
+     * @return the all
+     */
     public List<T> getAll() {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -58,6 +96,13 @@ public class GenericDao<T> {
         return list;
     }
 
+    /**
+     * Gets by property equal.
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property equal
+     */
     public List<T> getByPropertyEqual(String propertyName, String value) {
         Session session = getSession();
 
@@ -73,6 +118,13 @@ public class GenericDao<T> {
         return entities;
     }
 
+    /**
+     * Gets by property like.
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property like
+     */
     public List<T> getByPropertyLike(String propertyName, String value) {
         Session session = getSession();
 
