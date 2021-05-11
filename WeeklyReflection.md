@@ -40,16 +40,47 @@ to tweak database at some point, but after redoing all the testing using these n
 
 ### Week 9 -
 
+- Checking for different APIs still...running into many issues where APIs are deprecated, require an issued authorization or otherwise.
+- Having some trouble testing API endpoints for APIs that I can use.
+- Learning how to handle the JSON data and generate appropriate pojos so that I can use the data in the application.
+
 ### Week 10 -
+
+- Mostly worked on team project, but learned a lot about restful services and the overall structure of an API.
+- Worked on setting up the repo and inviting the other team members so we can all write to the repo.
 
 ### Week 11 -
 
+- Team project.
+- Began testing endpoints and working on documentation for the project.
+
 ### Week 12 -
+
+- Team project.
+- Completed documentation, deployed project to AWS and tested to make sure all endpoints working correctly.
 
 ### Week 13 -
 
+- Looking into Google talent API that allows users to create job board and use machine learning to suggest jobs based on user activity.
+- Lots of documentation, almost too much, can be difficult to locate exactly what's necessary.
+- Tons of dependencies and different plugins needed to work with this API.
+
 ### Week 14 -
+
+- Scrapped Google talent API due to complexity. 
+- Seems more tailored for a team of devs that can implement into a much larger operation.
+- Looking for API that will return job data without authorization that cannot be obtained.
+- Some job APIs require that you post jobs to their site before you can get read access (Indeed).
+- Started working with Remotive API....seems like it is read only.
 
 ### Week 15 -
 
+- Was able to get data from the Remotive API and output to browser despite POJO issues and some wrapper JSON.
+- All endpoints are working and coded in a search bar so users can lookup jobs using the different endpoints.
+
 ### Week 16 -
+- Annoyed at myself for not getting farther with this and adding more capability, but determined to keep working on it over the summer.
+- Achieved what I could with the time I left myself, but need to do more testing and add in the ability to let users store jobs in the database for retrieval.
+- Application is at least returning job data and was able to implement data table. 
+- Admin capabilites test well and able to delete users is functional still. 
+- Learned a lot about falling short of project plan and constantly reminded things more time consuming than anticipated.
