@@ -9,6 +9,8 @@ job boards that seemingly all contain the same jobs from recruiters and few, if 
 The idea for my individual project is to hone in on sites that could actually be useful and present those job
 leads in a pleasing manner that is helpful to the average student that may be in the hunt for a job or internship.
 
+Watch the [demo video!](https://youtu.be/_z5DuhSRnhU)
+
 Project Technologies/Techniques 
 
 - Dependency Management
