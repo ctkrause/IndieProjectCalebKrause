@@ -4,7 +4,6 @@ import caleb.indie.entity.User;
 import caleb.indie.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Add or edit the user
- * @author pwaite
+ * Admin can delete users from the database on the searchUser.jsp
+ * @author Caleb Krause
+ * @version 1.0
  */
 
 @WebServlet(
@@ -26,6 +26,13 @@ public class Delete extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * The doPost method allows an admin to delete users from the database
+     * @param req The request object
+     * @param resp The response object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

@@ -15,7 +15,8 @@
           crossorigin="anonymous">
 </head>
 <body>
-<a href="/index">Home Page</a>
+<a href="index">Home Page</a>
+<a href="login.jsp">Login</a>
 <h1>Login failed...please try again.</h1>
 </body>
 </html>

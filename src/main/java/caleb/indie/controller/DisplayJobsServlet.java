@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This servlet uses the Remotive IO to retrieve job information and return jobs to the index jsp.
+ * @author Caleb Krause
+ * @version 1.0
+ */
 @WebServlet(
         name = "index", urlPatterns = {"/index"} )
 
@@ -18,6 +23,14 @@ public class DisplayJobsServlet extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+
+    /**
+     * The doGet method utilizes the api dao to retrieve job data from the API endpoints
+     * @param req the request object
+     * @param resp the response object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ApiDao apiDao = new ApiDao();

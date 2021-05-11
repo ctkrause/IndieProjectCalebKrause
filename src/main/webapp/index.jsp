@@ -8,14 +8,14 @@
 </head>
 <html>
 <body>
-    <h1>Welcome To Work Search Aggregator</h1>
-    <a href="index">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
-    <a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
-    <a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
-    <br><br>
+<h1>Welcome To Work Search Aggregator</h1>
+<a href="index">&bull;&nbsp;Home Page</a>&nbsp;&nbsp;&nbsp;
+<a href="admin.jsp">&bull;&nbsp;Click Here To Access Admin Page</a>&nbsp;&nbsp;&nbsp;
+<a href="register.jsp">&bull;&nbsp;Click Here To Signup As New User</a>&nbsp;&nbsp;&nbsp;
+<br><br>
 
-    <form action="index">
-        <p>Please enter your search criteria:</p>
+<form action="index">
+    <p>Please enter your search criteria:</p>
     <label for="search">Search Criteria:</label>
     <input type="text" id="search" name="search">
     <br>
@@ -25,28 +25,29 @@
     <label for="category">Category</label><br>
     <input type="radio" id="titledescription" name="criteria" value="titledescription">
     <label for="titledescription">Title/Description</label><br>
-        <input type="submit" value="Submit">
-    </form>
-    <br><br>
-    <table style="text-align: center; padding: 15px; width: 100%; border-spacing: 15px;">
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+<table style="text-align: center; padding: 15px; width: 100%; border-spacing: 15px;">
+    <tr>
+        <th>Company Name</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Candidate Required Location</th>
+        <th>Job Posting URL</th>
+        <th>Salary</th>
+    </tr>
+    <c:forEach var="jobs" items="${jobs}">
         <tr>
-            <th>Company Name</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Candidate Required Location</th>
-            <th>Job Posting URL</th>
-            <th>Salary</th>
+            <td>${jobs.getCompanyName()}</td>
+            <td>${jobs.getTitle()}</td>
+            <td>${jobs.getCategory()}</td>
+            <td>${jobs.getCandidateRequiredLocation()}</td>
+            <td><a href="${jobs.getUrl()}">${jobs.getUrl()}</a></td>
+            <td>${jobs.getSalary()}</td>
         </tr>
-        <c:forEach var="jobs" items="${jobs}">
-            <tr>
-                <td>${jobs.getCompanyName()}</td>
-                <td>${jobs.getTitle()}</td>
-                <td>${jobs.getCategory()}</td>
-                <td>${jobs.getCandidateRequiredLocation()}</td>
-                <td><a href="${jobs.getUrl()}">${jobs.getUrl()}</a></td>
-                <td>${jobs.getSalary()}</td>
-            </tr>
-        </c:forEach>
-    </table>
+    </c:forEach>
+</table>
 </body>
 </html>
+
